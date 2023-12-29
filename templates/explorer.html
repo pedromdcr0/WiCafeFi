@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WiCafeFi - Cafes</title>
+    <link rel="stylesheet" href="/static/css/explorer.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="header_title">
+                <p>WiCafeFi</p>
+            </div>
+            <div class="header_login">
+                <a class="header_login_name" href="/">Login</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1>All cities</h1>
+            <ul>
+                {% for cafe in cafes %}
+                    <li>
+                        <strong>ID:</strong> {{ cafe.id }}<br>
+                        <strong>Nome:</strong> {{ cafe.nome }}<br>
+                        <strong>Cidade:</strong> {{ cafe.cidade.nome }}<br>
+                        <!-- Outros campos do Café -->
+                        <br>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+
+    </main>
+    <footer class="footer">
+        <a class="footer_a" href="#">Send feedback</a>
+        <div class="footer_pa">
+            <p class="footer_pa_p">Inspired by: © </p>
+            <a class="footer_pa_a" href="https://laptopfriendly.co"> LaptopFriendly</a>
+        </div>
+        <p class="footer_brand">© WiCafeFi</p>
+    </footer>
+
+</body>
+</html>

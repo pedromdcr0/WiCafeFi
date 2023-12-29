@@ -5,6 +5,7 @@
     --black: #2F2F2F;
     --white: #FFFFFF;
     --primary-color: #02AE8F;
+    --secondary-color: #AE8F02;
     --primary-font: 'Quicksand', sans-serif;
     --font-title: 'Bebas Neue', sans-serif;
 }
@@ -103,6 +104,11 @@ main {
 .first_content_button:hover {
     opacity: 1;
     transition: opacity 0.3s ease;
+}
+
+.first_content_button:active {
+    background-color: var(--secondary-color);
+    transition: background-color 0.2s ease;
 }
 
 .second_content {

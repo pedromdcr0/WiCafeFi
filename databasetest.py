@@ -1,30 +1,37 @@
-import sqlite3
-import pandas as pd
+from sqlalchemy import create_engine, Column, String, Boolean, Integer
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-# Substitua 'seuarquivo.db' pelo nome do seu arquivo .db
-nome_arquivo_db = 'models/cafes.db'
 
-# Conectar ao banco de dados
-conexao = sqlite3.connect(nome_arquivo_db)
+database_url = "sqlite:///models/cafes.db"
+engine = create_engine(database_url)
+Base = declarative_base()
 
-# Criar um cursor para executar consultas SQL
-cursor = conexao.cursor()
 
-# Exemplo: executar uma consulta para selecionar todos os dados da tabela 'cafe'
-cursor.execute('SELECT * FROM cafe')
+class Cafe(Base):
+    __tablename__ = 'cafe'
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    map_url = Column(String)
+    img_url = Column(String)
+    location = Column(String)
+    has_socket = Column(Boolean)
+    has_toilet = Column(Boolean)
+    has_wifi = Column(Boolean)
+    can_take_calls = Column(Boolean)
+    seats = Column(String)
+    coffee_price = Column(String)
+    cidade = Column(String, default='London')
 
-# Recuperar todos os resultados da consulta
-resultados = cursor.fetchall()
 
-# Obter os nomes das colunas
-nomes_colunas = [descricao[0] for descricao in cursor.description]
+Base.metadata.create_all(engine)
 
-# Criar um DataFrame Pandas
-df = pd.DataFrame(resultados, columns=nomes_colunas)
 
-# Exibir todas as colunas do DataFrame
-pd.set_option('display.max_columns', None)
-print(df)
+Session = sessionmaker(bind=engine)
+session = Session()
 
-# Fechar a conexão
-conexao.close()
+
+session.commit()
+
+
+session.close()

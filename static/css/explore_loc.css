@@ -4,8 +4,6 @@
 :root {
     --black: #2F2F2F;
     --white: #FFFFFF;
-    --gray: #EFEFEF;
-    --grayer: #DDDDDD;
     --primary-color: #02AE8F;
     --secondary-color: #AE8F02;
     --primary-font: 'Quicksand', sans-serif;
@@ -47,7 +45,6 @@ body {
 }
 
 main {
-    flex: 1;
     min-height: 80vh;
 }
 
@@ -83,45 +80,4 @@ main {
 .footer_pa_brand {
     display:flex;
     justify-content: space-between;
-}
-
-.list_of_locs {
-    text-align:center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 10px;
-    list-style: none;
-
-}
-
-.list_of_locs_locs {
-    padding: 10px 0px;
-    width: calc(33.33% - 10px);
-    margin: 10px 0;
-}
-
-.loc_anchor {
-    background-color: var(--gray);
-    color: var(--black);
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.loc_anchor:hover {
-    background-color: var(--grayer);
-    transition: background-color 0.3s ease;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-}
-
-.title {
-    display:flex;
-    justify-content: space-around;
-    font-weight: 500;
 }

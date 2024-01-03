@@ -46,6 +46,7 @@ body {
 
 main {
     min-height: 80vh;
+    display: flex;
 }
 
 .footer {
@@ -80,4 +81,36 @@ main {
 .footer_pa_brand {
     display:flex;
     justify-content: space-between;
+}
+
+.filters {
+    width: 33.3%
+}
+
+.filters_title {
+
+}
+
+.result {
+    width : 33.3%
+}
+
+.result_title {
+
+}
+
+.map {
+    width : 33.3%
+}
+
+.map_title {
+
+}
+
+.button_pressed {
+    background-color: var(--black);
+}
+
+.button_not_pressed {
+    background-color: var(--white);
 }

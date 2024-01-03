@@ -22,7 +22,7 @@
             <ul class="list_of_locs">
                 {% for location in locations %}
                     <li class="list_of_locs_locs">
-                        <a class="loc_anchor" href="{{ url_for('explore_loc', location=location[0]) }}">{{ location[0] }}</a>
+                        <a class="loc_anchor" href="/explore_loc/{{ location[0] }}/0">{{ location[0] }}</a>
                     </li>
                 {% endfor %}
 

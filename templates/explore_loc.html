@@ -17,7 +17,28 @@
         </div>
     </header>
     <main>
+        <div class="filters">
+            <h1 class="filters_title">Filters:</h1>
 
+            <div class="liked_places">
+                <form action="/refresh_filters/{{ location }}" method="post">
+                    <div>
+                        <h2 class="liked_places_title">My places:</h2>
+                        <button class="button_not_pressed" type="submit" name="action" value="like_button">Liked</button>
+                    </div>
+                    <div>
+                        <h2>Filters:</h2>
+                        <button class="button_not_pressed" type="submit" name="action" value="sockets">Sockets</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="result">
+            <h1 class="result_title">Result:</h1>
+        </div>
+        <div class="map">
+            <h1 class="map_title">Map:</h1>
+        </div>
 
     </main>
     <footer class="footer">

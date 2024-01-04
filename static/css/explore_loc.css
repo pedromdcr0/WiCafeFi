@@ -4,6 +4,8 @@
 :root {
     --black: #2F2F2F;
     --white: #FFFFFF;
+    --gray: #EFEFEF;
+    --grayer: #DDDDDD;
     --primary-color: #02AE8F;
     --secondary-color: #AE8F02;
     --primary-font: 'Quicksand', sans-serif;
@@ -87,30 +89,33 @@ main {
     width: 33.3%
 }
 
-.filters_title {
-
-}
-
 .result {
     width : 33.3%
-}
-
-.result_title {
-
 }
 
 .map {
     width : 33.3%
 }
 
-.map_title {
-
-}
-
 .button_pressed {
+    border:none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size:16px;
+    color: var(--white);
     background-color: var(--black);
 }
 
 .button_not_pressed {
-    background-color: var(--white);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size:16px;
+    color: var(--black);
+    background-color: var(--gray);
+}
+
+.button_not_pressed:hover {
+    background-color: var(--grayer);
+    transition: background-color 0.5s ease;
 }

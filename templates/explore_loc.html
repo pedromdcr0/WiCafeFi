@@ -24,11 +24,14 @@
                 <form action="/refresh_filters/{{ location }}" method="post">
                     <div>
                         <h2 class="liked_places_title">My places:</h2>
-                        <button class="button_not_pressed" type="submit" name="action" value="like_button">Liked</button>
+                        <button class="{% if 'like_button' in filters %} button_pressed {% else %} button_not_pressed {% endif %}" type="submit" name="action" value="like_button">Liked</button>
                     </div>
                     <div>
                         <h2>Filters:</h2>
-                        <button class="button_not_pressed" type="submit" name="action" value="sockets">Sockets</button>
+                        <button class="{% if 'sockets' in filters %} button_pressed {% else %} button_not_pressed {% endif %}" type="submit" name="action" value="sockets">Sockets</button>
+                        <button class="{% if 'toilets' in filters %} button_pressed {% else %} button_not_pressed {% endif %}" type="submit" name="action" value="toilets">Toilets</button>
+                        <button class="{% if 'wifi' in filters %} button_pressed {% else %} button_not_pressed {% endif %}" type="submit" name="action" value="wifi">Wifi</button>
+                        <button class="{% if 'calls' in filters %} button_pressed {% else %} button_not_pressed {% endif %}" type="submit" name="action" value="calls">Calls</button>
                     </div>
                 </form>
             </div>

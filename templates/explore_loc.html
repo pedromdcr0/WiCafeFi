@@ -38,9 +38,23 @@
         </div>
         <div class="result">
             <h1 class="result_title">Result:</h1>
+            {% for cafes in results %}
+            <div class="result_cafe">
+                <img class="result_image" src="{{ cafes.img_url }}" alt="{{ result }}">
+                <div>
+                    <p class="result_name">{{ cafes.name }}</p>
+                    <p class="result_price">{{ cafes.coffee_price }}</p>
+                    <a href="{{ cafes.map_url }}" class="result_map">{{ cafes.map_url }}</a>
+
+                </div>
+            </div>
+            {% endfor %}
         </div>
         <div class="map">
-            <h1 class="map_title">Map:</h1>
+            <h1 class="map_title"></h1>
+            {% for cafes in results %}
+            <iframe src="" frameborder="0"></iframe>
+            {% endfor %}
         </div>
 
     </main>

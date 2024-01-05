@@ -86,15 +86,15 @@ main {
 }
 
 .filters {
-    width: 33.3%
+    width: 25%
 }
 
 .result {
-    width : 33.3%
+    width : 50%
 }
 
 .map {
-    width : 33.3%
+    width : 25%
 }
 
 .button_pressed {
@@ -118,4 +118,39 @@ main {
 .button_not_pressed:hover {
     background-color: var(--grayer);
     transition: background-color 0.5s ease;
+}
+
+.result_cafe {
+    background-color: var(--gray);
+    border-radius: 10px;
+    display: flex;
+    margin: 10px;
+}
+
+.result_cafe:hover {
+    background-color: var(--grayer);
+    transition: background-color 0.5s ease;
+}
+
+.result_image {
+    border-radius: 10px;
+    width: 140px;
+    height: 120px;
+}
+
+.result_name {
+    font-weight: 500;
+    padding-left: 5px;
+    margin: 10px;
+}
+
+.result_price {
+    padding-left: 5px;
+    margin: 10px;
+}
+
+.result_map {
+    padding-left: 5px;
+    margin: 10px;
+    color: var(--black);
 }

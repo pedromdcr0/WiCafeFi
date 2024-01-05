@@ -15,7 +15,7 @@ class Cafe(db.Model):
     img_url = db.Column(db.String(255), nullable=False)
     location = db.Column(db.String(255), nullable=False)
     has_sockets = db.Column(db.Boolean, default=True)
-    has_toilets = db.Column(db.Boolean, default=True)
+    has_toilet = db.Column(db.Boolean, default=True)
     has_wifi = db.Column(db.Boolean, default=True)
     can_take_calls = db.Column(db.Boolean, default=True)
     seats = db.Column(db.String(255), nullable=False)
@@ -43,13 +43,20 @@ def explore_loc(location, way):
         filters_data = json.load(filters_file)
     print(way)
     if way == "1":
-        print("chegou aqui")
         filters = filters_data["filters"]
         print(filters)
         return render_template('explore_loc.html', location=location, filters=filters)
-    else:
+    elif way == "0":
         filters = []
-        return render_template('explore_loc.html', location=location, filters=filters)
+        filter_dict = {"filters": filters}
+        cafes = Cafe.query.filter_by(location=location).all()
+
+        with open("models/filters.json", "w") as filters_file_w:
+            json.dump(filter_dict, filters_file_w, indent=4)
+
+        print(cafes)
+
+        return render_template('explore_loc.html', location=location, filters=filters, results=cafes)
 
 
 @app.route("/refresh_filters/<location>", methods=["POST"])
